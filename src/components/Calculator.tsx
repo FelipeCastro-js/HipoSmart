@@ -1,6 +1,4 @@
-import { Form } from "./Form";
-import { Instructions } from "./Instructions";
-import { Results } from "./Results";
+import { Form, Instructions, Results } from "../components";
 
 interface Props {
   styles?: string;
@@ -8,7 +6,7 @@ interface Props {
 
 export const Calculator = ({ styles = "" }: Props) => {
   return (
-    <div className={`${styles}`}>
+    <div className={`${styles} w-[375px]`}>
       <Form />
       <div>
         <Results />
