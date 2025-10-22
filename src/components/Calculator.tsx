@@ -9,8 +9,8 @@ export const Calculator = ({ styles = "" }: Props) => {
     <div className={`${styles} w-[375px]`}>
       <Form />
       <div>
-        <Results />
         <Instructions />
+        <Results />
       </div>
     </div>
   );
