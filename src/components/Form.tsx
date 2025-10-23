@@ -24,11 +24,11 @@ export const Form = ({ styles = "" }: Props) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<Input>();
 
   const sendForm: SubmitHandler<Input> = (data: Input) => {
-    console.log("data", data);
     const { mortgageAmount, mortgageTerms, interestRate, mortgageType } = data;
     // Calculate mortgage
     const { monthlyPayment, totalRepay } = calculateMortgage(
@@ -45,6 +45,15 @@ export const Form = ({ styles = "" }: Props) => {
     });
   };
 
+  const clearAll = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    context.setResults({
+      monthlyPayment: 0,
+      totalRepay: 0,
+    });
+    reset();
+  };
+
   return (
     <form
       onSubmit={handleSubmit(sendForm)}
@@ -54,7 +63,10 @@ export const Form = ({ styles = "" }: Props) => {
         <h1 className="text-2xl font-bold mb-2 md:mb-10">
           Mortgage Calculator
         </h1>
-        <button className="underline text-Slate-700 mb-6 cursor-pointer md:mb-0">
+        <button
+          onClick={clearAll}
+          className="underline text-Slate-700 mb-6 cursor-pointer md:mb-0"
+        >
           Clear All
         </button>
       </div>
