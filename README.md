@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# 🏠 Hipo Smart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Hipo Smart** is a web application developed as part of the **Frontend Mentor Challenge (Junior Level)**.  
+The project features a clean and modern financial interface focused on user experience, accessibility, and responsive design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧩 Technologies Used
 
-## React Compiler
+- ⚛️ **React** — for building interactive UI components and project structure.  
+- 🟦 **TypeScript** — for static typing and stronger code reliability.  
+- 💨 **Tailwind CSS** — for creating a clean, modern, and responsive layout.  
+- 🔄 **React Hook Form** — for efficient and elegant form management.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎨 Preview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<img width="1731" height="941" alt="image" src="https://github.com/user-attachments/assets/c8f82e60-05aa-4bcb-ac40-c89d4e6339b2" />
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📱 Main Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Fully **responsive design**, adaptable to any screen size.  
+- **Clean and professional** UI with a strong focus on usability.  
+- **Reusable components** built with TypeScript.  
+- **Form handling** powered by React Hook Form for smooth user interactions.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Installation and Usage
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/hipo-smart.git
+
+# 2. Navigate to the project directory
+cd hipo-smart
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev
+
+# 5. Open your browser and go to
+http://localhost:5173
