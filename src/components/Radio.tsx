@@ -10,11 +10,11 @@ export const Radio = ({ label, ...props }: Props) => {
     >
       <div className="relative">
         <input
-          {...props}
-          name="Mortgage Type"
           id={label}
           type="radio"
+          {...props}
           className="appearance-none size-5 border checked:border-Lime rounded-full peer"
+          value={label}
         />
         <span className="absolute size-3 bg-Lime rounded-full top-[4px] left-[4px] opacity-0 peer-checked:opacity-100"></span>
       </div>

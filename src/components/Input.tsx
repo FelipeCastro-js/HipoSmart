@@ -21,6 +21,7 @@ export const Input = ({
       </label>
       <div className=" relative">
         <input
+          step={0.01}
           className={`outline ${position === "right" ? "pl-4" : "pl-22"} ${
             error ? "outline-Red" : "outline-Slate-500"
           }  cursor-pointer focus:outline-Lime peer rounded-sm  w-full h-[46px] font-bold

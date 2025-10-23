@@ -1,5 +1,11 @@
-import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { useForm, type SubmitHandler } from "react-hook-form";
 import { Button, Input, Radio } from "../components";
+import { PaymentContext } from "../contexts/Payment-Context";
+import {
+  calculateMortgage,
+  type MortgageType,
+} from "../utils/CalculateMortgage";
 
 interface Props {
   styles?: string;
@@ -9,18 +15,34 @@ interface Input {
   mortgageAmount: number;
   mortgageTerms: number;
   interestRate: number;
-  mortgageType: "Repayment" | "Interest Only";
+  mortgageType: MortgageType;
 }
 
 export const Form = ({ styles = "" }: Props) => {
+  const context = useContext(PaymentContext);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Input>();
 
-  const sendForm = () => {
+  const sendForm: SubmitHandler<Input> = (data: Input) => {
+    console.log("data", data);
+    const { mortgageAmount, mortgageTerms, interestRate, mortgageType } = data;
     // Calculate mortgage
+    const { monthlyPayment, totalRepay } = calculateMortgage(
+      mortgageAmount,
+      mortgageTerms,
+      interestRate,
+      mortgageType
+    );
+
+    // Context Provider
+    context.setResults({
+      monthlyPayment,
+      totalRepay,
+    });
   };
 
   return (
@@ -41,6 +63,10 @@ export const Form = ({ styles = "" }: Props) => {
           {...register("mortgageAmount", {
             required: true,
             valueAsNumber: true,
+            min: {
+              value: 0.01,
+              message: "The value must be greater than zero",
+            },
           })}
           error={errors.mortgageAmount?.type === "required"}
           label="Mortgage Amount"
@@ -52,6 +78,10 @@ export const Form = ({ styles = "" }: Props) => {
             {...register("mortgageTerms", {
               required: true,
               valueAsNumber: true,
+              min: {
+                value: 0.01,
+                message: "The value must be greater than zero",
+              },
             })}
             error={errors.mortgageTerms?.type === "required"}
             label="Mortgage Terms"
@@ -61,6 +91,10 @@ export const Form = ({ styles = "" }: Props) => {
             {...register("interestRate", {
               required: true,
               valueAsNumber: true,
+              min: {
+                value: 0.01,
+                message: "The value must be greater than zero",
+              },
             })}
             error={errors.interestRate?.type === "required"}
             label="Interest Rate"
