@@ -6,7 +6,9 @@ interface Props {
 
 export const Calculator = ({ styles = "" }: Props) => {
   return (
-    <div className={`${styles} w-[375px]`}>
+    <div
+      className={`${styles}  md:max-w-[688px] md:my-10 md:rounded-2xl overflow-hidden`}
+    >
       <Form />
       <div>
         <Instructions />

@@ -12,7 +12,7 @@ export const Input = ({
   position = "right",
 }: Props) => {
   return (
-    <div className={`${styles}`}>
+    <div className={`${styles} md:w-full`}>
       <label className="mb-3 block text-Slate-700" htmlFor={label}>
         {label}
       </label>
