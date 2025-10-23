@@ -2,7 +2,7 @@ interface Props {
   label: string;
 }
 
-export const Radio = ({ label }: Props) => {
+export const Radio = ({ label, ...props }: Props) => {
   return (
     <label
       htmlFor={label}
@@ -10,6 +10,7 @@ export const Radio = ({ label }: Props) => {
     >
       <div className="relative">
         <input
+          {...props}
           name="Mortgage Type"
           id={label}
           type="radio"
