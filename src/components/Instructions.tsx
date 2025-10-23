@@ -4,7 +4,9 @@ interface Props {
 
 export const Instructions = ({ styles = "" }: Props) => {
   return (
-    <div className={`${styles} bg-Slate-900 text-white py-8 px6 text-center`}>
+    <div
+      className={`${styles} bg-Slate-900 text-white py-8 px6 text-center lg:h-full lg:rounded-bl-[80px]`}
+    >
       <img
         className="m-auto mb-4"
         src="/assets/images/illustration-empty.svg"
