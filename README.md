@@ -3,6 +3,8 @@
 **Hipo Smart** is a web application developed as part of the **Frontend Mentor Challenge (Junior Level)**.  
 The project features a clean and modern financial interface focused on user experience, accessibility, and responsive design.
 
+👉 Check it out live here: https://hipo-smart.vercel.app/
+
 ---
 
 ## 🧩 Technologies Used
